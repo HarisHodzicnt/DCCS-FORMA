@@ -1,0 +1,173 @@
+.hidden{
+  display: none;
+}
+.block{
+  clear:both;
+  display: block;
+
+}
+
+ul.tabs{
+list-style-type: none;
+float:left;
+height: 35px;
+	width: 97.4%;
+margin:0 auto;
+}
+.tabs li{
+  float:left;
+  border:2px solid black;
+  padding:8px;
+  margin-left: 2px;
+  background-color: grey;
+  color:white;
+
+  cursor: pointer;
+}
+li.active{
+  background: white;
+  border-bottom: 3px solid white;
+  color:black;
+  display: block;
+}
+
+.admin{
+  clear:both;
+  border:3px solid black;
+  min-height: 600px;
+}
+.admin form{
+  margin-top:3%;
+  margin-left: 3.3%;
+  font-size: 20px;
+}
+.admin button{
+	height:31px;
+}
+form input{
+  border:2px solid black;
+  padding-left:10px;
+  padding-right: 10px;
+}
+form input, form button{
+  margin-left: 10px;
+  height:24px;
+}
+form button {
+  border:2px solid black;
+  padding-left:30px;
+  padding-right: 30px;
+  height:31px;
+  box-shadow: 1px 1px 1px black;
+  background: white;
+  cursor: pointer;
+}
+.notFind{
+  display: none;
+}
+.oneRow {
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 5px;
+  clear: both;
+
+}
+.oneRow label{
+  float: left;
+  margin-top: 2px;
+}
+.oneRow input,.oneRow select{
+  height:24px;
+  border: 2px solid black;
+  float:left;
+  margin-left: 10px;
+
+}
+.oneRow select{
+   width:200px;
+   height:30px;
+}
+
+.oneRow span{
+  margin-left: 10px;
+  float:left;
+  background: grey;
+  height: 30px;
+    width: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold ;
+    border:2px solid black;
+    margin-top: -2px;
+}
+.oneRow span b{
+   font-size:1.3em;
+  display: inline-block;
+  cursor: pointer;
+}
+.save{
+  padding:2px 30px 2px 30px;
+  box-shadow: 2px 2px 2px black;
+  position: absolute;
+  left:86%;
+  top:600px;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  border:2px solid black;
+
+}
+
+.savedForm{
+  display: block;
+}
+.formular{
+  clear:both;
+  border:3px solid black;
+	font-size: 20px;
+  min-height: 600px;
+}
+.formular label{
+	display: inline-block;
+	margin-top:3.2%;
+ margin-left: 3.3%;
+}
+.formular button{
+	height:30px;
+}
+.formular select{
+	height:30px;
+	margin-left: 10px;
+}
+
+.saveF{
+  padding:2px 30px 2px 30px;
+  box-shadow: 2px 2px 2px black;
+  position: absolute;
+  left:85.3%;
+  top:600px;
+  cursor: pointer;
+  background: white;
+  font-size: 19px;
+  border:2px solid black;
+}
+
+.styleRowButtonRadio{
+    margin-left: 280px;
+    clear:both;
+    width:226px;
+    display: inline-block;
+    margin-top:2px;
+}
+.styleRowButtonRadio{
+  margin-left: 280px;
+  display: block;
+}
+.radioLabels{
+  clear:both;
+  width:226px;
+  display: inline-block;
+  margin-top:2px;
+}

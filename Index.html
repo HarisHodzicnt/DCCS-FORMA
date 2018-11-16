@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css.css"/>
+    <title></title>
+  </head>
+  <body>
+<ul class="tabs">
+  <li class="tab active">Administrator</li>
+  <li class="tab">Formular</li>
+</ul>
+<div id="admin" class="admin" >
+  <form class="SearchForm">
+    <label for="search">Formular name: </label>
+    <input type="text" name="searchInput" id="search" value="" placeholder="Search for formular by name"/>
+    <button type="button" name="searchButton"  onclick="searchFun(this)">Search</button>
+  </form>
+  <form class="notFind"  id="formNotFind">
+   <div class="oneRow">
+     <label for="searchField">Element1</label>
+     <input type="text" name="nonFoundInput" value=""  placeholder="label">
+      <select class="options" id="inputTypes" name="0" onclick="inputTypesAll(this)">
+        <option class="types" value="TextBox">TextBox</option>
+        <option class="types" value="RadioButton">Radio Button</option>
+        <option class="types" value="CheckBox">CheckBox</option>
+      </select>
+
+      <select class="hidden ifRadioSelected" name="0" style="width:40px;" onclick="addLabelsForRadio(this);">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <select class="mandatory" name="" >
+        <option value="mandatory">Mandatory</option>
+        <option value="number">Number</option>
+        <option value="email">E-mail</option>
+        <option value="text">Text</option>
+        <option value="none">None</option>
+      </select>
+      <span type="button" name="button" onClick="addElements()"><b>+</b></span>
+      <div id="insertRadioLabel0" class="styleRowButtonRadio" name="0">
+
+</div>
+      </div>
+   </div>
+  </form>
+</div>
+
+  <form class="savedForm">
+    <div id="formular" class="formular hidden">
+    <label for="formName">Formular name: </label>
+    <select id="existingFormulars">
+      <option value="sef">Some Existing formular</option>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="c">C</option>
+    </select>
+    <label for="version">Version: </label>
+    <input type="text" name="version" value="" style="width:30px">
+    <button type="button" name="load"  onclick="update()">Load</button>
+    <div class="formularOneRow">
+
+    </div>
+    <button type="button" class="saveF" name="button">Save</button>
+
+</div>
+
+</form>
+
+
+<button type="button" class="save hidden" name="button">Save</button>
+  </body>
+  <script type="text/javascript" src="js.js"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</html>
