@@ -15,38 +15,11 @@
     <label for="search">Formular name: </label>
     <input type="text" name="searchInput" id="search" value="" placeholder="Search for formular by name"/>
     <button type="button" name="searchButton"  onclick="searchFun(this)">Search</button>
-  </form>
-  <form class="notFind"  id="formNotFind">
-   <div class="oneRow">
-     <label for="searchField">Element1</label>
-     <input type="text" name="nonFoundInput" value=""  placeholder="label">
-      <select class="options" id="inputTypes" name="0" onclick="inputTypesAll(this)">
-        <option class="types" value="TextBox">TextBox</option>
-        <option class="types" value="RadioButton">Radio Button</option>
-        <option class="types" value="CheckBox">CheckBox</option>
-      </select>
+    <div style="margin-top:3%; clear:both;"></div>
 
-      <select class="hidden ifRadioSelected" name="0" style="width:40px;" onclick="addLabelsForRadio(this);">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-      <select class="mandatory" name="" >
-        <option value="mandatory">Mandatory</option>
-        <option value="number">Number</option>
-        <option value="email">E-mail</option>
-        <option value="text">Text</option>
-        <option value="none">None</option>
-      </select>
-      <span type="button" name="button" onClick="addElements()"><b>+</b></span>
-      <div id="insertRadioLabel0" class="styleRowButtonRadio" name="0">
-
-</div>
-      </div>
+        </form>
    </div>
-  </form>
-</div>
+
 
   <form class="savedForm">
     <div id="formular" class="formular hidden">

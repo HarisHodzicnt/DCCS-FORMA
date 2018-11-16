@@ -1,5 +1,7 @@
 /*GLOBAL VARIABLES*/
 var formularArray=["h","e","s"];
+var counter=1;
+
 /*GLOBAL VARIABLES*/
 
 
@@ -47,11 +49,138 @@ for(var i=0;i<tabs.length;i++)
 /*If nothing matches to users search*/
 
 function searchFun(e){
+  var h="";
   if(formularArray.includes(e.previousElementSibling.value)==0){
-    document.getElementsByClassName("notFind")[0].style.display="block";
         e.previousElementSibling.value="";
     e.previousElementSibling.placeholder="Some non existing formular";
+    var form=document.getElementsByClassName("SearchForm")[0].innerHTML+=" <div class='oneRow'>"+
+         "<label for='searchField'>"+"Element"+counter+"</label>"+
+        "<input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+          "<select class='options'  name='"+counter+"' onclick='inputTypesAll(this)''>"+
+            "<option class='types' value='TextBox'>"+"TextBox"+"</option>"
+            +"<option class='types' value='RadioButton'>"+"RadioButton"+"</option>"+
+            "<option class='types' value='CheckBox'>"+"CheckBox"+"</option>"+
+          "</select>"+
+          "<select class='hidden ifRadioSelected' name='"+counter+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+            "<option value='0'>"+0+"</option>"+
+            "<option value='1'>"+1+"</option>"+
+            "<option value='2'>"+2+"</option>"+
+            "<option value='3'>"+3+"</option>"+
+          "</select>"+
+          "<select class='mandatory' name='' >"+
+            "<option value='mandatory'>"+"Mandatory"+"</option>"+
+            "<option value='number'>"+"Number"+"</option>"+
+            "<option value='E-mail'>"+"E-mail"+"</option>"+
+            "<option value='Text'>"+"Text"+"</option>"+
+            "<option value='None'>"+"None"+"</option>"+
+          "</select>"+
+          "<span type='button' name='button' onClick='addElements()''>"+"<b>"+"+"+"</b>"+"</span>"+
+          "<div  id='insertRadioLabel"+counter+"' class='styleRowButtonRadio'>"+"</div>"+
+       "</div>";;
+
     document.getElementsByClassName("save")[0].classList.remove("hidden");
+  }
+  else{
+    alert("Please custom your form !");
+    document.getElementsByClassName("save")[0].classList.remove("hidden");
+    if(e.previousElementSibling.value=="h"){
+      for(var i=0;i<4;i++)
+      {
+       h+=" <div class='oneRow'>"+
+            "<label for='searchField'>"+"Element"+counter+"</label>"+
+           "<input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+             "<select class='options'  name='"+counter+"' onclick='inputTypesAll(this)''>"+
+               "<option class='types' value='TextBox'>"+"TextBox"+"</option>"
+               +"<option class='types' value='RadioButton'>"+"RadioButton"+"</option>"+
+               "<option class='types' value='CheckBox'>"+"CheckBox"+"</option>"+
+             "</select>"+
+             "<select class='hidden ifRadioSelected' name='"+counter+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+               "<option value='0'>"+0+"</option>"+
+               "<option value='1'>"+1+"</option>"+
+               "<option value='2'>"+2+"</option>"+
+               "<option value='3'>"+3+"</option>"+
+             "</select>"+
+             "<select class='mandatory' name='' >"+
+               "<option value='mandatory'>"+"Mandatory"+"</option>"+
+               "<option value='number'>"+"Number"+"</option>"+
+               "<option value='E-mail'>"+"E-mail"+"</option>"+
+               "<option value='Text'>"+"Text"+"</option>"+
+               "<option value='None'>"+"None"+"</option>"+
+             "</select>"+
+             "<span type='button' name='button' onClick='addElements()''>"+"<b>"+"+"+"</b>"+"</span>"+
+             "<div  id='insertRadioLabel"+counter+"' class='styleRowButtonRadio'>"+"</div>"+
+          "</div>";
+       counter++;
+
+      }
+      var form=document.getElementsByClassName("SearchForm")[0].innerHTML+=h;
+
+        }
+    else if(e.previousElementSibling.value=="s"){
+      for(var i=0;i<6;i++)
+      {
+        h+= " <div class='oneRow'>"+
+             "<label for='searchField'>"+"Element"+counter+"</label>"+
+            "<input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+              "<select class='options'  name='"+counter+"' onclick='inputTypesAll(this)''>"+
+                "<option class='types' value='TextBox'>"+"TextBox"+"</option>"
+                +"<option class='types' value='RadioButton'>"+"RadioButton"+"</option>"+
+                "<option class='types' value='CheckBox'>"+"CheckBox"+"</option>"+
+              "</select>"+
+              "<select class='hidden ifRadioSelected' name='"+counter+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+                "<option value='0'>"+0+"</option>"+
+                "<option value='1'>"+1+"</option>"+
+                "<option value='2'>"+2+"</option>"+
+                "<option value='3'>"+3+"</option>"+
+              "</select>"+
+              "<select class='mandatory' name='' >"+
+                "<option value='mandatory'>"+"Mandatory"+"</option>"+
+                "<option value='number'>"+"Number"+"</option>"+
+                "<option value='E-mail'>"+"E-mail"+"</option>"+
+                "<option value='Text'>"+"Text"+"</option>"+
+                "<option value='None'>"+"None"+"</option>"+
+              "</select>"+
+              "<span type='button' name='button' onClick='addElements()''>"+"<b>"+"+"+"</b>"+"</span>"+
+              "<div  id='insertRadioLabel"+counter+"' class='styleRowButtonRadio'>"+"</div>"+
+           "</div>";
+        counter++;
+
+
+      }      var form=document.getElementsByClassName("SearchForm")[0].innerHTML+=h;
+    }
+    else if(e.previousElementSibling.value=="e"){
+      for(var i=0;i<2;i++)
+      {
+      h+=  "<div class='oneRow'>"+
+           "<label for='searchField'>"+"Element"+counter+"</label>"+
+          "<input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+            "<select class='options'  name='"+counter+"' onclick='inputTypesAll(this)''>"+
+              "<option class='types' value='TextBox'>"+"TextBox"+"</option>"
+              +"<option class='types' value='RadioButton'>"+"RadioButton"+"</option>"+
+              "<option class='types' value='CheckBox'>"+"CheckBox"+"</option>"+
+            "</select>"+
+            "<select class='hidden ifRadioSelected' name='"+counter+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+              "<option value='0'>"+0+"</option>"+
+              "<option value='1'>"+1+"</option>"+
+              "<option value='2'>"+2+"</option>"+
+              "<option value='3'>"+3+"</option>"+
+            "</select>"+
+            "<select class='mandatory' name='' >"+
+              "<option value='mandatory'>"+"Mandatory"+"</option>"+
+              "<option value='number'>"+"Number"+"</option>"+
+              "<option value='E-mail'>"+"E-mail"+"</option>"+
+              "<option value='Text'>"+"Text"+"</option>"+
+              "<option value='None'>"+"None"+"</option>"+
+            "</select>"+
+            "<span type='button' name='button' onClick='addElements()''>"+"<b>"+"+"+"</b>"+"</span>"+
+            "<div  id='insertRadioLabel"+counter+"' class='styleRowButtonRadio'>"+"</div>"+
+         "</div>";
+      counter++;
+
+      }
+      var form=document.getElementsByClassName("SearchForm")[0].innerHTML+=h;
+    }
+
   }
 }
 /*If nothing matches to users search*/
@@ -66,16 +195,16 @@ function addElements(){
     alert("Sorry, You are allowed to add  10 of these.");
     return 0;
   }
-  var form=document.getElementById("formNotFind");
+  var form=document.getElementsByClassName("SearchForm")[0];
   var rowS=" <div class='oneRow'>"+
      "<label for='searchField'>"+"Element"+(howMany.length+1)+"</label>"+
     "<input type='text' name='nonFoundInput' value='' placeholder='label'>"+
-      "<select class='options' id='inputTypes' name='"+howMany.length+"' onclick='inputTypesAll(this)''>"+
+      "<select class='options'  name='"+(howMany.length+1)+"' onclick='inputTypesAll(this)''>"+
         "<option class='types' value='TextBox'>"+"TextBox"+"</option>"
         +"<option class='types' value='RadioButton'>"+"RadioButton"+"</option>"+
         "<option class='types' value='CheckBox'>"+"CheckBox"+"</option>"+
       "</select>"+
-      "<select class='hidden ifRadioSelected' name='"+howMany.length+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+      "<select class='hidden ifRadioSelected' name='"+(howMany.length+1)+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
         "<option value='0'>"+0+"</option>"+
         "<option value='1'>"+1+"</option>"+
         "<option value='2'>"+2+"</option>"+
@@ -89,7 +218,7 @@ function addElements(){
         "<option value='None'>"+"None"+"</option>"+
       "</select>"+
       "<span type='button' name='button' onClick='addElements()''>"+"<b>"+"+"+"</b>"+"</span>"+
-      "<div  id='insertRadioLabel"+howMany.length+"' class='styleRowButtonRadio'>"+"</div>"+
+      "<div  id='insertRadioLabel"+(howMany.length+1)+"' class='styleRowButtonRadio'>"+"</div>"+
    "</div>";
 
   var newElement=document.createElement("div");
@@ -104,20 +233,20 @@ function addElements(){
 /*PICKING TYPES OF INPUTS*/
 var s=0;
 var g=0;
-
 var radioLabels=document.createElement("input");
 radioLabels.placeholder="Radio button label";
 radioLabels.setAttribute("class", "radioLabels");
-var inputType=document.getElementById("inputTypes");
-var numberOfLabelsForRadio=document.getElementsByClassName("ifRadioSelected");
 
   function inputTypesAll(a){
+    var numberOfLabelsForRadio=document.getElementsByClassName("ifRadioSelected");
+console.log(numberOfLabelsForRadio);
     if(s%2==1){
       if(a.value=="RadioButton" || a.value=="CheckBox"){
-        numberOfLabelsForRadio[a.name].classList.remove("hidden");
+        numberOfLabelsForRadio[(a.name)-1].classList.remove("hidden");
+        console.log(a.name);
       }
       else{
-        numberOfLabelsForRadio[a.name].classList.add("hidden");
+        numberOfLabelsForRadio[(a.name)-1].classList.add("hidden");
 
       }
     }
@@ -210,7 +339,7 @@ else{
 }
 }
 Object.keys(arrOfOptions).forEach(function(key) {
-
+console.log(document.getElementsByClassName("oneRow").length);
 if(arrOfOptions[key][0]=="TextBox")
 {
   arrOfOptions[key].forEach(function(element) {
