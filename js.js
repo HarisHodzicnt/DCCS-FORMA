@@ -1,12 +1,77 @@
 /*GLOBAL VARIABLES*/
-var formularArray=["h","e","s"];
+var formularArray=["Some existing formular","e","s"];
 var counter=1;
 
 /*GLOBAL VARIABLES*/
-
-
-
-
+var h="<div class='oneRow'>"+
+"<label for='searchField'>Element1</label><input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+"<select class='options' name='1' onclick='inputTypesAll(this)'>"+
+"<option class='types' value='TextBox'>TextBox</option>"+
+"<option class='types' value='RadioButton'>RadioButton</option>"+
+"<option class='types' value='CheckBox'>CheckBox</option>"+
+"</select>"+
+"<select class='hidden ifRadioSelected' name='1' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+"<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option>"+
+"<option value='3'>3</option>"+
+"</select>"+
+"<select class='mandatory' name=''>"+
+"<option value='mandatory'>Mandatory</option>"+
+"<option value='number'>Number</option>"+
+"<option value='E-mail'>E-mail</option>"+
+"<option value='Text'>Text</option>"+
+"<option value='None'>None</option>"+
+"</select>"+
+"<span type='button' name='button' onclick='addElements()''><b>+</b></span>"+
+"<div id='insertRadioLabel1' class='styleRowButtonRadio'></div></div>"+
+"<div>"+
+"<div class='oneRow'>"+
+"<label for='searchField'>Element2</label><input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+"<select class='options' name='2' onclick='inputTypesAll(this)'>"+
+"<option class='types' value='TextBox'>TextBox</option>"+
+"<option class='types' value='RadioButton'>RadioButton</option>"+
+"<option class='types' value='CheckBox'>CheckBox</option>"+
+"</select>"+
+"<select class='hidden ifRadioSelected' name='2' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+"<option value='0'>0</option>"+
+"<option value='1'>1</option>"+
+"<option value='2'>2</option>"+
+"<option value='3'>3</option>"+
+"</select>"+
+"<select class='mandatory' name=''>"+
+"<option value='mandatory'>Mandatory</option>"+
+"<option value='number'>Number</option>"+
+"<option value='E-mail'>E-mail</option>"+
+"<option value='Text'>Text</option>"+
+"<option value='None'>None</option>"+
+"</select>"+
+"<span type='button' name='button' onclick='addElements()''><b>+</b></span>"+
+"<div id='insertRadioLabel2' class='styleRowButtonRadio'></div></div>"+
+"<div>"+
+"<div class='oneRow'>"+
+"<label for='searchField'>Element3</label><input type='text' name='nonFoundInput' value='' placeholder='label'>"+
+"<select class='options' name='3' onclick='inputTypesAll(this)'>"+
+"<option class='types' value='RadioButton'>RadioButton</option>"+
+"<option class='types' value='TextBox'>TextBox</option>"+
+"<option class='types' value='CheckBox'>CheckBox</option>"+
+"</select>"+
+"<select class='ifRadioSelected' name='3' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
+"<option value='3'>3</option>"+
+"<option value='0'>0</option>"+
+"<option value='1'>1</option>"+
+"<option value='2'>2</option>"+
+"</select>"+
+"<select class='mandatory' name=''>"+
+"<option value='mandatory'>Mandatory</option>"+
+"<option value='number'>Number</option>"+
+"<option value='E-mail'>E-mail</option>"+
+"<option value='Text'>Text</option>"+
+"<option value='None'>None</option>"+
+"</select>"+
+"<span type='button' name='button' onclick='addElements()''><b>+</b></span><div id='insertRadioLabel3' class='styleRowButtonRadio'>"+
+"<input class='radioLabels' placeholder='Radio Label'>"+
+"<input class='radioLabels' placeholder='Radio Label'>"+
+"<input class='radioLabels' placeholder='Radio Label'>"+
+"</div></div></div><div>";
 
 /*When user switch from Administrator to Formular*/
 var tabs= document.getElementsByClassName("tab");
@@ -49,7 +114,6 @@ for(var i=0;i<tabs.length;i++)
 /*If nothing matches to users search*/
 
 function searchFun(e){
-  var h="";
   if(formularArray.includes(e.previousElementSibling.value)==0){
         e.previousElementSibling.value="";
     e.previousElementSibling.placeholder="Some non existing formular";
@@ -83,36 +147,8 @@ function searchFun(e){
   else{
     alert("Please custom your form !");
     document.getElementsByClassName("save")[0].classList.remove("hidden");
-    if(e.previousElementSibling.value=="h"){
-      for(var i=0;i<4;i++)
-      {
-       h+=" <div class='oneRow'>"+
-            "<label for='searchField'>"+"Element"+counter+"</label>"+
-           "<input type='text' name='nonFoundInput' value='' placeholder='label'>"+
-             "<select class='options'  name='"+counter+"' onclick='inputTypesAll(this)''>"+
-               "<option class='types' value='TextBox'>"+"TextBox"+"</option>"
-               +"<option class='types' value='RadioButton'>"+"RadioButton"+"</option>"+
-               "<option class='types' value='CheckBox'>"+"CheckBox"+"</option>"+
-             "</select>"+
-             "<select class='hidden ifRadioSelected' name='"+counter+"' style='width:40px;' onclick='addLabelsForRadio(this);'>"+
-               "<option value='0'>"+0+"</option>"+
-               "<option value='1'>"+1+"</option>"+
-               "<option value='2'>"+2+"</option>"+
-               "<option value='3'>"+3+"</option>"+
-             "</select>"+
-             "<select class='mandatory' name='' >"+
-               "<option value='mandatory'>"+"Mandatory"+"</option>"+
-               "<option value='number'>"+"Number"+"</option>"+
-               "<option value='E-mail'>"+"E-mail"+"</option>"+
-               "<option value='Text'>"+"Text"+"</option>"+
-               "<option value='None'>"+"None"+"</option>"+
-             "</select>"+
-             "<span type='button' name='button' onClick='addElements()''>"+"<b>"+"+"+"</b>"+"</span>"+
-             "<div  id='insertRadioLabel"+counter+"' class='styleRowButtonRadio'>"+"</div>"+
-          "</div>";
-       counter++;
+    if(e.previousElementSibling.value=="Some existing formular"){
 
-      }
       var form=document.getElementsByClassName("SearchForm")[0].innerHTML+=h;
 
         }
@@ -239,11 +275,9 @@ radioLabels.setAttribute("class", "radioLabels");
 
   function inputTypesAll(a){
     var numberOfLabelsForRadio=document.getElementsByClassName("ifRadioSelected");
-console.log(numberOfLabelsForRadio);
     if(s%2==1){
       if(a.value=="RadioButton" || a.value=="CheckBox"){
         numberOfLabelsForRadio[(a.name)-1].classList.remove("hidden");
-        console.log(a.name);
       }
       else{
         numberOfLabelsForRadio[(a.name)-1].classList.add("hidden");
@@ -254,7 +288,6 @@ console.log(numberOfLabelsForRadio);
   }
 
 function addLabelsForRadio(a){
-  console.dir(a);
       if(g%2==1 && document.getElementById("insertRadioLabel"+[a.name]).childElementCount<=3 )
       {
         if(a.value==0 )
@@ -339,60 +372,63 @@ else{
 }
 }
 Object.keys(arrOfOptions).forEach(function(key) {
-console.log(document.getElementsByClassName("oneRow").length);
 if(arrOfOptions[key][0]=="TextBox")
 {
   arrOfOptions[key].forEach(function(element) {
     if(element=="mandatory")
     {
       newElement="";
-      newElement="<div class='block'><label>"+"label "+key+"*"+"</label><input class='oneRow' type='text'/></div>";
+      newElement="<div class='block formularF'><label>"+allOptions[key].children[1].value+"*"+"</label><input class='oneRow' type='text'/></div>";
     }
     else{
-      newElement="<label>"+"label "+key+" :"+"</label><input class='oneRow' type='text'/>";
+      newElement="<label>"+allOptions[key].children[1].value+" :"+"</label><input class='oneRow' type='text'/>";
     }
 
 });
-console.log(newElement);
 formular.innerHTML+=newElement;
 }
 else if(arrOfOptions[key][0]=="RadioButton")
 {
   for(var i=0;i<arrOfOptions[key][1];i++)
   {
-    newRadioLabel+="<div class='block' style='margin-left: 120px; margin-top: -24px;'><input type='radio' class='oneRow' style='display:inline-block; float:left;' name='radio' value='"+arrOfOptions[key][3+i]+"'/><label style='margin-top:-8px; display:inline-block;'>"+arrOfOptions[key][3+i]+"</label></div>";
+    newRadioLabel+="<div class='block blockF' style='margin-left: 180px; margin-top: -24px;'><input type='radio' class='oneRow' style='display:inline-block; float:left;' name='radio"+key+"' value='"+arrOfOptions[key][3+i]+"'/><label style='margin-top:-8px; display:inline-block;'>"+arrOfOptions[key][3+i]+"</label></div>";
 
       arrOfOptions[key].forEach(function(element) {
     if(element=="mandatory")
     {
-      newElement="<div style='clear:both;'><label>"+"label "+key+": *"+"</label></div>";
+      newElement="<div class='formularF' style='clear:both;'><label>"+allOptions[key].children[1].value+": *"+"</label></div>";
     }
     else{
-      newElement="<div style='clear:both;'><label>"+"label "+key+" :"+"</label></div>";
+      newElement="<div class='formularF' style='clear:both;'><label>"+allOptions[key].children[1].value+" :"+"</label></div>";
     }
     });
 }
 formular.innerHTML+=newElement;
+newElement="";
 formular.innerHTML+=newRadioLabel;
+newRadioLabel="";
 }
 else if(arrOfOptions[key][0]=="CheckBox")
 {
   for(var i=0;i<arrOfOptions[key][1];i++)
   {
-    newCheckBoxLabel+="<div class='block' style='margin-left: 120px; margin-top: -24px;'><input type='CheckBox' class='oneRow block style='margin-left: 120px; margin-top: -24px;' style='display:inline-block; float:left;' name='CheckBox' value='"+arrOfOptions[key][3+i]+"'/><label style='margin-top:-8px; display:inline-block;'>"+arrOfOptions[key][3+i]+"</label></div>";
+    newCheckBoxLabel+="<div class='block blockF' style='margin-left: 180px; margin-top: -24px;'><input type='CheckBox' class='oneRow block style='margin-left: 120px; margin-top: -24px;' style='display:inline-block; float:left;' name='CheckBox"+key+"' value='"+arrOfOptions[key][3+i]+"'/><label style='margin-top:-8px; display:inline-block;'>"+arrOfOptions[key][3+i]+"</label></div>";
 
       arrOfOptions[key].forEach(function(element) {
     if(element=="mandatory")
     {
-      newElement="<div style='clear:both;'><label>"+"label "+key+": *"+"</label></div>";
+      newElement="<div class='formularF' style='clear:both;'><label>"+allOptions[key].children[1].value+": *"+"</label></div>";
     }
     else{
-      newElement="<div style='clear:both;'><label>"+"label "+key+" :"+"</label></div>";
+      newElement="<div class='formularF' style='clear:both;'><label>"+allOptions[key].children[1].value+" :"+"</label></div>";
     }
     });
 }
 formular.innerHTML+=newElement;
+newElement="";
 formular.innerHTML+=newCheckBoxLabel;
+newCheckBoxLabel="";
+
 }
 
 
@@ -403,3 +439,53 @@ formular.innerHTML+=newCheckBoxLabel;
 
 
 /*ALL OF ABOVE IS FOR ADMINISTRATOR PANEL*//*ALL OF ABOVE IS FOR ADMINISTRATOR PANEL*//*ALL OF ABOVE IS FOR ADMINISTRATOR PANEL*//*ALL OF ABOVE IS FOR ADMINISTRATOR PANEL*/
+
+function saveForm(){
+var allRows=document.getElementsByClassName("formularF");
+var allButtons=document.getElementsByClassName("blockF");
+var values={};
+var arr=[];
+var holder;
+var arrCheckBox=[];
+var iradio=0;
+var nameOfFormular=document.getElementById("existingFormulars").value;
+
+for(var i=0;i<allRows.length;i++)
+{
+  var checkBoxInputs=document.querySelectorAll(".oneRow[name='CheckBox"+i+"']");
+  var radioInputs=document.querySelectorAll(".oneRow[name='radio"+i+"']");
+  console.dir(radioInputs);
+  if(allRows[i].children.length>1 && allRows[i].children[1].type=="text")
+  {
+    arr.push(allRows[i].children[0].textContent,allRows[i].children[1].value);
+    values[i]=arr;
+    arr=[];
+  }
+  else if(allRows[i].nextElementSibling.children[0].type=="radio")
+  {
+    for(var j=0;j<radioInputs.length;j++){
+      if(radioInputs[j].checked==true)
+      {
+        console.log(radioInputs[j]);
+            arr.push(allRows[i].children[0].textContent, radioInputs[j].value);
+      }
+  }
+  values[i]=arr;
+  arr=[];
+}
+  else
+  {
+    for(var j=0;j<checkBoxInputs.length;j++){
+      if(checkBoxInputs[j].checked==true)
+      {
+        arrCheckBox.push(checkBoxInputs[j].value)
+      }
+    }
+      arr.push(allRows[i].children[0].textContent, arrCheckBox);
+      values[i]=arr;
+      arrCheckBox=[];
+      arr=[];
+  }
+}
+console.log(values);
+}
