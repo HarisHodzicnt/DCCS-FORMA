@@ -454,7 +454,6 @@ for(var i=0;i<allRows.length;i++)
 {
   var checkBoxInputs=document.querySelectorAll(".oneRow[name='CheckBox"+i+"']");
   var radioInputs=document.querySelectorAll(".oneRow[name='radio"+i+"']");
-  console.dir(radioInputs);
   if(allRows[i].children.length>1 && allRows[i].children[1].type=="text")
   {
     arr.push(allRows[i].children[0].textContent,allRows[i].children[1].value);
@@ -466,7 +465,6 @@ for(var i=0;i<allRows.length;i++)
     for(var j=0;j<radioInputs.length;j++){
       if(radioInputs[j].checked==true)
       {
-        console.log(radioInputs[j]);
             arr.push(allRows[i].children[0].textContent, radioInputs[j].value);
       }
   }
